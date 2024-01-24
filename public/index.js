@@ -33,39 +33,39 @@ const tableBody = (data) => {
 };
 
 // Add a new student to the database with the form data from the user
-document.addEventListener("DOMContentLoaded", () => {
-  formSubmit.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    // Get the values from the form fields
-    const name = studentName.value;
-    const email = studentEmail.value;
-    const phone = studentPhone.value;
+// document.addEventListener("DOMContentLoaded", () => {
+//   formSubmit.addEventListener("submit", async (e) => {
+//     e.preventDefault();
+//     // Get the values from the form fields
+//     const name = studentName.value;
+//     const email = studentEmail.value;
+//     const phone = studentPhone.value;
 
-    console.log(name);
-    // Send the new student data to the server\
-    const response = await fetch("http://localhost:9000/students", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: name,
-        email: email,
-        phone: phone,
-      }),
-    });
+//     console.log(name);
+//     // Send the new student data to the server\
+//     const response = await fetch("http://localhost:9000/students", {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify({
+//         name: name,
+//         email: email,
+//         phone: phone,
+//       }),
+//     });
 
-    // Get the updated data from the server
-    const newData = await response.json();
-    const data = [newData];
-    // console.log(data);
+//     // Get the updated data from the server
+//     const newData = await response.json();
+//     const data = [newData];
+//     // console.log(data);
 
-    // Update the table with the new data
-    tableBody(data);
+//     // Update the table with the new data
+//     tableBody(data);
 
-    // Clear the form fields for the  next input
-    studentName.value = "";
-    studentEmail.value = "";
-    studentPhone.value = "";
-  });
-});
+//     // Clear the form fields for the  next input
+//     studentName.value = "";
+//     studentEmail.value = "";
+//     studentPhone.value = "";
+//   });
+// });

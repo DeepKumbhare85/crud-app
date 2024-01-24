@@ -13,7 +13,7 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  console.log("post request");
+console.log("post request");
   const student = new Student({
     name: req.body.name,
     email: req.body.email,
@@ -22,7 +22,7 @@ router.post("/", async (req, res) => {
 
   try {
     const s1 = await student.save();
-    res.json(s1);
+    res.redirect('/');
   } catch (err) {
     res.send("Error");
   }
